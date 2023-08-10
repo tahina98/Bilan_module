@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <script src="https://kit.fontawesome.com/a7dbd1cbd9.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="CSS/style.css">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+    <div class="nouveau">
+    <a class="new" href="{{ path('app_module_new') }}">Nouveau bilan</a>
+    </div>
+
+
+        {% block body %}{% endblock %}
+
+    <footer>  © Tahina - {{ "now"|date("Y") }}</footer>
+    </body>
+
+</html>
+

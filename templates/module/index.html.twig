@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+
+<div class="module">
+
+        {% for module in modules %}
+
+    <p class="textMod">
+        {{module.intitule }} - {{ module.formateur }}
+
+        {% if module.note==1 %}
+            <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+            <i class="fa-solid fa-star" style="color: #000000;"></i>
+            <i class="fa-solid fa-star" style="color: #000000;"></i>
+            <i class="fa-solid fa-star" style="color: #000000;"></i>
+            <i class="fa-solid fa-star" style="color: #000000;"></i>
+
+            {% elseif module.note==2 %}
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #000000;"></i>
+                <i class="fa-solid fa-star" style="color: #000000;"></i>
+                <i class="fa-solid fa-star" style="color: #000000;"></i>
+
+            {% elseif module.note==3 %}
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #000000;"></i>
+                <i class="fa-solid fa-star" style="color: #000000;"></i>
+
+            {% elseif module.note==4 %}
+                <i class="fa-solid fa-star" style="color:#ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #000000;"></i>
+            {% elseif module.note==5 %}
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+                <i class="fa-solid fa-star" style="color: #ffff00;"></i>
+        {% endif %}
+
+    </p>
+
+                    {#<a href="{{ path('app_module_show', {'id': module.id}) }}">show</a>
+                    <a href="{{ path('app_module_edit', {'id': module.id}) }}">edit</a>#}
+
+        {% else %}
+
+                <td colspan="6">no records found</td>
+
+        {% endfor %}
+
+</div>
+
+
+{% endblock %}
